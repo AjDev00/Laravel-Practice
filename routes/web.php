@@ -19,5 +19,6 @@ Route::get('about', function () {
 
 // Route parameters.
 Route::get('contact/{myName}/{myLevel}', function($myName, $myLevel){
-    return view('contact', ['myName' => $myName, 'myLevel' => $myLevel]);
+    // return view('contact', ['myName' => $myName, 'myLevel' => $myLevel]);
+    return view('contact', compact('myName','myLevel')); //using the compact function is a more easier way of doing it.
 });
