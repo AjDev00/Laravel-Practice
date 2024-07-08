@@ -18,6 +18,6 @@ Route::get('about', function () {
 });
 
 // Route parameters.
-Route::get('contact/{myName}', function($myName){
-    return view('contact', ['myName' => $myName]);
+Route::get('contact/{myName}/{myLevel}', function($myName, $myLevel){
+    return view('contact', ['myName' => $myName, 'myLevel' => $myLevel]);
 });
