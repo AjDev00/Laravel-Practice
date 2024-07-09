@@ -20,10 +20,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::share([
-            'country' => 'Nigeria',
-            'state' => 'Lagos',
-            'city' => 'Ikeja'
-        ]);
+        // View::share([
+        //     'country' => 'Nigeria',
+        //     'state' => 'Lagos',
+        //     'city' => 'Ikeja'
+        // ]);
+
+        View::composer(['admin/home','customer/sub/about','customer/home'], function($view){
+            $view -> with('country', 'Nigeria');
+            $view -> with('state','Lagos');
+            $view -> with('city','Ikeja');
+        });
     }
 }

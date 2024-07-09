@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-// use Illuminate\Support\Facade\File;
+use Illuminate\Support\Facades\File;
 
 class CreateView extends Command
 {
