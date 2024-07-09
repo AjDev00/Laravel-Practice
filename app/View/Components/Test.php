@@ -11,9 +11,12 @@ class Test extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $label, $placeholder;
+
+     public function __construct($label, $placeholder)
     {
-        //
+        $this->label = $label;
+        $this->placeholder = $placeholder;
     }
 
     /**

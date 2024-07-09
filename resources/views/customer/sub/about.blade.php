@@ -16,6 +16,10 @@
     <br />
 
     State Name: {{ $state }}
+    <div>
+        <x-test label="Full Name" placeholder="Fullname"/>
+        <x-test label="Email Address" placeholder="Email"/>
+    </div>
 </body>
 </html>
 
