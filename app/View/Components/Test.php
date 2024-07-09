@@ -13,7 +13,7 @@ class Test extends Component
      */
     public $label, $placeholder;
 
-     public function __construct($label, $placeholder)
+    public function __construct($label, $placeholder)
     {
         $this->label = $label;
         $this->placeholder = $placeholder;
