@@ -17,11 +17,39 @@ Route::get('about', function () {
     return view('about');
 });
 
+//admin home route page.
+Route::get('admin/home', function () {
+    return view('admin.home');
+});
+
+//customer home route page.
+Route::get('customer/home', function () {
+    return view('customer.home');
+});
+
+//customer sub about route page.
+Route::get('customer/sub/about', function(){
+    return view('customer.sub.about');
+});
+
 // Route parameters.
-Route::get('contact/{myName}/{myLevel}', function($myName, $myLevel){
+Route::get('customer/contact/{myName}/{myLevel}', function($myName, $myLevel){
     // return view('contact', ['myName' => $myName, 'myLevel' => $myLevel]);
-    return view('contact', compact('myName','myLevel')); //using the compact function is a more easier way of doing it.
+    return view('customer.contact', compact('myName','myLevel')); //using the compact function is a more easier way of doing it.
 }) -> where(['myName' => '[a-zA-Z]+','myLevel' => '[0-9]+']); //the where keyword sets a condition for the myLevel parameter(can only take in integers as parameters) and myName parameter(can only take in string values).
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //RESOURCEFUL ROUTES!!
 //This automatically maps to a set of crud actions of a resource.
