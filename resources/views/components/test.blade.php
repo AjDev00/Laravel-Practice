@@ -6,10 +6,10 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-    <div>
-        <label for="">{{ $label }}</label>
-        <br>
-        <input class="border border-slate-400 p-1 placeholder:text-slate-300 font-serif shadow-sm focus:outline-none" type="text" placeholder={{ $placeholder }}>
-    </div>    
+    <div class="flex flex-col justify-center items-center mt-5">
+        <label for="" class="font-bold">{{ $label }}</label>
+        <input class="w-96 border border-slate-400 p-1 rounded-sm shadow-none focus:outline-none" type="text" placeholder="{{ $placeholder }}">
+    </div>
+    <br>    
 </body>
 </html>

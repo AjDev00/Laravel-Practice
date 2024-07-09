@@ -6,19 +6,21 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <h1 class="font-bold">Customer About Us.</h1>
-    <p>This is the customer sub about page.</p>
-
-    Country Name: {{ $country }}
-    <br />
-
-    City Name: {{ $city }}
-    <br />
-
-    State Name: {{ $state }}
-    <div>
-        <x-test label="Full Name" placeholder="Fullname"/>
-        <x-test label="Email Address" placeholder="Email"/>
+    <div class="flex flex-col justify-center items-center pt-10">
+        <h1 class="font-bold underline">Customer About Us.</h1>
+        <p>This is the customer sub about page.</p>
+    
+        Country Name: <b>{{ $country }}</b>
+        <br />
+    
+        City Name: <b>{{ $city }}</b>
+        <br />
+    
+        State Name: <b>{{ $state }}</b>
+        <div>
+            <x-test label="Full Name:" placeholder="full name..."/>
+            <x-test label="Email Address:" placeholder="email address..."/>
+        </div>
     </div>
 </body>
 </html>
