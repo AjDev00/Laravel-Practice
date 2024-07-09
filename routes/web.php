@@ -22,6 +22,7 @@ Route::get('contact/{myName}/{myLevel}', function($myName, $myLevel){
     // return view('contact', ['myName' => $myName, 'myLevel' => $myLevel]);
     return view('contact', compact('myName','myLevel')); //using the compact function is a more easier way of doing it.
 }) -> where(['myName' => '[a-zA-Z]+','myLevel' => '[0-9]+']); //the where keyword sets a condition for the myLevel parameter(can only take in integers as parameters) and myName parameter(can only take in string values).
+
 //RESOURCEFUL ROUTES!!
 //This automatically maps to a set of crud actions of a resource.
 // Route::resource('articles', 'ArticleController'); //the first parameter is the main route name and the second parameter name is the controller name.
