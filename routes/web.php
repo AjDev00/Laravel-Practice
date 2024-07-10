@@ -55,8 +55,18 @@ Route::get('conditional-statements/switch', function(){
 });
 
 
+//Route parameters for building layout using template inheritance.
+Route::get('main/home', function(){
+    return view('main.home');
+})->name('main-home');
 
+Route::get('main/about', function(){
+    return view('main.about');
+})->name('main-about');
 
+Route::get('main/settings', function(){
+    return view('main.settings');
+})->name('main-settings');
 
 
 
