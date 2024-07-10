@@ -1,6 +1,6 @@
 <!--{{ $country }}!-->
 
-<!-- //normal php directive for if statement. -->
+<!-- //normal php directive for conditional statement. -->
 <!-- <?php 
     if($country === "Nigeria"){
         echo "Nigeria";
@@ -9,7 +9,8 @@
     }
 ?> -->
 
-<!-- //blade directive for if statement. -->
+
+<!-- //blade directive for conditional statement. -->
 @if ($country === "Nigeria")
     Nigeria
 @elseif($country === "Ghana")
