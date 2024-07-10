@@ -17,6 +17,8 @@
         <br />
     
         State Name: <b>{{ $state }}</b>
+
+        <!-- //rendering the test component in the about file. -->
         <div>
             <x-test label="Full Name:" placeholder="full name..."/>
             <x-test label="Email Address:" placeholder="email address..."/>

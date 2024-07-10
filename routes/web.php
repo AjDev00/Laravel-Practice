@@ -41,11 +41,11 @@ Route::get('customer/contact/{myName}/{myLevel}', function($myName, $myLevel){
 
 
 //Route parameters for conditional statements.
-Route::get('conditional-statements/test', function(){
+Route::get('conditional-statements/ifandelseif', function(){
     $country = "Ghana";
     $city = "Kumasi";
 
-    return view('conditional-statements.test', compact('country', 'city'));
+    return view('conditional-statements.ifandelseif', compact('country', 'city'));
 });
 
 Route::get('conditional-statements/switch', function(){
