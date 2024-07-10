@@ -39,6 +39,13 @@ Route::get('customer/contact/{myName}/{myLevel}', function($myName, $myLevel){
 }) -> where(['myName' => '[a-zA-Z]+','myLevel' => '[0-9]+']); //the where keyword sets a condition for the myLevel parameter(can only take in integers as parameters) and myName parameter(can only take in string values).
 
 
+Route::get('conditional-statements/test', function(){
+    $country = "Ghana";
+    $city = "Kumasi";
+
+    return view('conditional-statements.test', compact('country', 'city'));
+});
+
 
 
 
