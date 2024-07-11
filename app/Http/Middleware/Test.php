@@ -15,13 +15,15 @@ class Test
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // echo "JustWeb Technology!";
-        $year = date("Y");
+        echo "JustWeb Technology!";
+
+        //can be used for authentication.
+        // $year = date("Y");
         
-        if($year != "2023"){
-            echo "Go back to 2023 to view this website.";
-            exit;
-        }
+        // if($year != "2023"){
+        //     echo "Go back to 2023 to view this website.";
+        //     exit;
+        // }
         return $next($request);
     }
 }
