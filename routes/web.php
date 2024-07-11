@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // the default welcome route.
@@ -7,10 +8,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-//the home route.
-Route::get('/', function () {
-    return view('home');
-});
+//the homeController route.
+Route::get('/', [HomeController::class,'index']); //the get method.
+Route::post('store', [HomeController::class,'store'])->name('store'); //the post method.
 
 //the about route.
 Route::get('about', function () {
