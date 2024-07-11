@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\Simple;
 use App\Http\Middleware\Test;
 use Illuminate\Support\Facades\Route;
 
@@ -10,8 +11,8 @@ Route::get('welcome', function () {
 })->middleware(Test::class);
 
 //the homeController route.
-Route::get('/', [HomeController::class,'index'])->middleware(Test::class); //the get method.
-Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Test::class); //the post method.
+Route::get('/', [HomeController::class,'index'])->middleware([Simple::class, Test::class]); //the get method.
+Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Simple::class); //the post method.
 
 //admin home route page.
 Route::get('admin/home', function () {
