@@ -1,21 +1,17 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\Test;
 use Illuminate\Support\Facades\Route;
 
 // the default welcome route.
 Route::get('welcome', function () {
     return view('welcome');
-});
+})->middleware(Test::class);
 
 //the homeController route.
-Route::get('/', [HomeController::class,'index']); //the get method.
-Route::post('store', [HomeController::class,'store'])->name('store'); //the post method.
-
-//the about route.
-Route::get('about', function () {
-    return view('about');
-});
+Route::get('/', [HomeController::class,'index'])->middleware(Test::class); //the get method.
+Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Test::class); //the post method.
 
 //admin home route page.
 Route::get('admin/home', function () {
@@ -31,6 +27,7 @@ Route::get('customer/home', function () {
 Route::get('customer/sub/about', function(){
     return view('customer.sub.about');
 });
+
 
 // Route parameters.
 Route::get('customer/contact/{myName}/{myLevel}', function($myName, $myLevel){
