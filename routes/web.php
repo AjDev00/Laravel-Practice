@@ -4,9 +4,9 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // the default welcome route.
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('welcome', function () {
+    return view('welcome');
+});
 
 //the homeController route.
 Route::get('/', [HomeController::class,'index']); //the get method.
