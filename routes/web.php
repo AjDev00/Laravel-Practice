@@ -14,7 +14,7 @@ Route::get('welcome', function () {
 
 //the homeController route.
 Route::get('/', [HomeController::class,'index'])->middleware([Simple::class, Test::class]); //the get method with two middlewares.
-Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Simple::class); //the post method with a single middleware.
+// Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Simple::class); //the post method with a single middleware.
 
 //admin home route page.
 Route::get('admin/home', function () {
@@ -131,6 +131,7 @@ Route::get('delete_session_data', function(Request $request){
 
 //CONTACT FORM.
 Route::get('contact-form', [ContactFormController::class, 'index']);
+Route::post('contact/store', [ContactFormController::class, 'store'])->name('store');
 
 
 
