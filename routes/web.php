@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\Simple;
 use App\Http\Middleware\Test;
@@ -127,6 +128,9 @@ Route::get('delete_session_data', function(Request $request){
 
 });
 
+
+//CONTACT FORM.
+Route::get('contact-form', [ContactFormController::class, 'index']);
 
 
 
