@@ -11,6 +11,14 @@ class ContactFormController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
+        // dd($request->all());
+
+        //validating input fields. making sure the necessary input fields are filled before submitting.
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            // 'message' => 'required'
+        ]);
     }
 }
