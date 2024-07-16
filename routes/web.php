@@ -4,15 +4,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Middleware\Simple;
 use App\Http\Middleware\Test;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
-// the default welcome route.
+// the default welcome route with a single middleware.
 Route::get('welcome', function () {
     return view('welcome');
 })->middleware(Test::class);
 
 //the homeController route.
-Route::get('/', [HomeController::class,'index'])->middleware([Simple::class, Test::class]); //the get method.
-Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Simple::class); //the post method.
+Route::get('/', [HomeController::class,'index'])->middleware([Simple::class, Test::class]); //the get method with two middlewares.
+Route::post('store', [HomeController::class,'store'])->name('store')->middleware(Simple::class); //the post method with a single middleware.
 
 //admin home route page.
 Route::get('admin/home', function () {
@@ -67,7 +68,64 @@ Route::get('main/settings', function(){
 })->name('main-settings');
 
 
+//HTTP SESSION - Store, Retrieve and Flash Data.
+//SHOW SESSION DATA.
+Route::get('show_session_data', function(Request $request){
 
+    //shows all session data(type 1).
+    // dd(session()->all());
+
+    //shows specific data(type 2).
+    // echo $request->session()->get('username');
+    // echo "<br>";
+    // echo $request->session()->get('email');
+
+    //type 3.
+    echo session('username');
+    echo "<br>";
+    echo session('email');
+    echo "<br>";
+
+    // //using if statement with session.
+    if($request->session()->has('phonenumber')){
+        echo session('phonenumber');
+    }
+    else{
+        echo 'Phone Number session not found.';
+    }
+});
+
+//STORE SESSION DATA.
+Route::get('store_session_data', function(Request $request){
+    
+    //type 1.
+    // $request->session()->put('username', 'justweb');
+    // $request->session()->put('email', 'justweb@gmail.com');
+
+    //type 2. This can hold multiple session parameters.
+    session([
+        'username' => 'justweb',
+        'email' => 'justweb@gmail.com',
+        'phonenumber' => '07658940323'
+    ]);
+
+    //flash session data.
+    $request->session()->flash('status', 'Done!');
+});
+
+//DELETE SESSION DATA.
+Route::get('delete_session_data', function(Request $request){
+
+    //the forget function is used to delete specific session data.
+    session()->forget([
+        'username',
+        'email'
+    ]);
+
+    //used to erase all the stored session data.
+    $request->session()->flush();
+
+});
 
 
 
