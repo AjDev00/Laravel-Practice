@@ -19,5 +19,7 @@ class ContactController extends Controller
             'message' => 'max:600',
             'file' => 'required|mimes:jpeg,png,pdf,max:2048'
         ]);
+
+        dd($request->all());
     }
 }
