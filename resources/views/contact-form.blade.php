@@ -53,7 +53,7 @@
 
             <div class="flex flex-col gap-2">
                 <label for="">Message: </label>
-                <textarea name="message"cols="30" rows="10" class="border border-slate-500 h-32 w-72 rounded-sm @error('message') error @enderror">{{ old('message') }}</textarea>
+                <textarea name="message"cols="30" rows="10" class="border border-slate-500 h-32 w-72 rounded-sm">{{ old('message') }}</textarea>
             </div>
             @error('message')
                 <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
