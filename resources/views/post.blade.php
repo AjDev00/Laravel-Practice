@@ -12,11 +12,16 @@
     </style>
 </head>
 <body>
-    <h2 class="text-3xl mb-7 mt-2">Post Form</h2>
+    <!-- <h2 class="text-3xl mb-7 mt-2">Post Form</h2> -->
+    <h2 style="font-size: 25px;" class="font-semibold mb-5">Uploaded Photo</h2>
     <form action="{{ route('post_store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-col gap-5">
-            <div class="flex flex-col gap-0">
+            <!-- displaying the uploaded image in the blade format. -->
+            <div>
+                <img src="{{ asset('storage/uploads/new_image.jpg') }}" alt="" style="width: 300px;">
+            </div>
+            <!-- <div class="flex flex-col gap-0">
                 <label for="">Title: </label>
                 <input type="text" 
                     name="title" 
@@ -49,7 +54,7 @@
                 @error('description')
                     <b style="font-size: 12px;" class="text-red-500">{{ $message }}</b>
                 @enderror
-            </div>
+            </div> -->
 
             <div class="flex flex-col gap-0">
                 <input type="file" name="file">               

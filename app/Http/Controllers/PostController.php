@@ -12,8 +12,8 @@ class PostController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'title' => ['required', 'unique:posts'],
-            'description' => ['required'],
+            // 'title' => ['required', 'unique:posts'],
+            // 'description' => ['required'],
             'file' => ['required', 'image']
         ]);
         
