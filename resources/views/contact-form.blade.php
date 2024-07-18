@@ -29,7 +29,7 @@
         <div class="flex flex-col gap-10">
             <div class="flex flex-row items-center gap-5">
                 <label for="">Name: </label>
-                <input type="text" name="name" class="border border-slate-500 py-0 rounded-sm @error('name') error @enderror" value="{{ old('name') }}">
+                <input type="text" name="name" class="focus:outline-none border border-slate-500 py-0 rounded-sm @error('name') error @enderror" value="{{ old('name') }}">
             </div>
             @error('name')
                 <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
@@ -37,7 +37,7 @@
 
             <div class="flex flex-row items-center gap-5">
                 <label for="">Email: </label>
-                <input type="text" name="email" class="border border-slate-500 py-0 rounded-sm @error('email') error @enderror" value="{{ old('email') }}">
+                <input type="text" name="email" class="focus:outline-none border border-slate-500 py-0 rounded-sm @error('email') error @enderror" value="{{ old('email') }}">
             </div>
             @error('email')
                 <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
@@ -45,15 +45,31 @@
 
             <div class="flex flex-row items-center gap-5">
                 <label for="">Phone Number: </label>
-                <input type="text" name="phone" class="border border-slate-500 py-0 rounded-sm @error('phone') error @enderror" value="{{ old('phone') }}">
+                <input type="text" name="phone" class="focus:outline-none border border-slate-500 py-0 rounded-sm @error('phone') error @enderror" value="{{ old('phone') }}">
             </div>
             @error('phone')
                 <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
             @enderror
 
+            <div class="flex flex-row items-center gap-5">
+                <label for="">Password: </label>
+                <input type="password" name="password" class="focus:outline-none border border-slate-500 py-0 rounded-sm @error('password') error @enderror">
+            </div>
+            @error('password')
+                <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
+            @enderror
+
+            <div class="flex flex-row items-center gap-5">
+                <label for="">Confirm Password: </label>
+                <input type="password" name="confirm_password" class="focus:outline-none border border-slate-500 py-0 rounded-sm @error('confirm_password') error @enderror">
+            </div>
+            @error('confirm_password')
+                <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
+            @enderror
+
             <div class="flex flex-col gap-2">
                 <label for="">Message: </label>
-                <textarea name="message"cols="30" rows="10" class="border border-slate-500 h-32 w-72 rounded-sm">{{ old('message') }}</textarea>
+                <textarea name="message"cols="30" rows="10" class="focus:outline-none border border-slate-500 h-32 w-72 rounded-sm">{{ old('message') }}</textarea>
             </div>
             @error('message')
                 <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
