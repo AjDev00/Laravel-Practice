@@ -63,10 +63,15 @@
                 @enderror
             </div>
 
-            <div>
+            <div class="flex flex-row gap-20">
                 <button type="submit" class="border border-transparent bg-teal-600 text-white p-2 rounded-full px-4 hover:opacity-70 hover:duration-300">
                     Submit
                 </button>
+                <a href="{{ route('post_delete') }}">
+                    <button type="button" class="border border-transparent bg-red-500 text-white p-2 rounded-full px-4 hover:opacity-70 hover:duration-300">
+                        Delete Photo
+                    </button>
+                </a>
             </div>
         </div>
     </form>

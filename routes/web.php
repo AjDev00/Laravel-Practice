@@ -134,8 +134,10 @@ Route::get('delete_session_data', function(Request $request){
 Route::get('contact-form', [ContactFormController::class, 'index']);
 Route::post('contact/store', [ContactFormController::class, 'store'])->name('store');
 
+//POST(IMAGE) UPLOADING.
 Route::get('post', [PostController::class, 'index']);
 Route::post('post/store', [PostController::class, 'store'])->name('post_store');
+Route::get('post/delete', [PostController::class, 'delete'])->name('post_delete');
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -32,6 +33,12 @@ class PostController extends Controller
         $final_name = "new_image." . $request->file->extension();
         $request->file->storeAs('uploads', $final_name);
 
+        return redirect()->back();
+    }
+
+    public function delete(){
+        Storage::delete('uploads/new_image.jpg');
+        
         return redirect()->back();
     }
 }
