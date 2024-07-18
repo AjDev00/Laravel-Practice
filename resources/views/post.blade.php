@@ -15,12 +15,12 @@
     <h2 class="text-3xl mb-7 mt-5 font-serif">Post Form</h2>
     <form action="{{ route('post_store') }}" method="post">
         @csrf
-        <div class="flex flex-col gap-10">
-            <div class="flex flex-row items-center gap-5">
+        <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-0">
                 <label for="">Title: </label>
                 <input type="text" 
                     name="title" 
-                    class="focus:outline-none border border-slate-500 py-0 rounded-sm 
+                    class="focus:outline-none border border-slate-500 py-0 rounded-sm w-72
                         @error('title') 
                             error 
                         @enderror
@@ -31,7 +31,7 @@
                 <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
             @enderror
 
-            <div class="flex flex-row items-center gap-5">
+            <div class="flex flex-col gap-0">
                 <label for="">Description: </label>
                 <textarea type="text" 
                     name="description" 
