@@ -19,15 +19,19 @@ class PostController extends Controller
         
         //any uploaded image should go inside the uploads folder in the public path. 
         //if there is no upload folder in the public path, create one.
-        $final_name = "new_image." . $request->file('file')->extension();
-        $request->file('file')->move(public_path('uploads'), $final_name);
+        // $final_name = "new_image." . $request->file('file')->extension();
+        // $request->file('file')->move(public_path('uploads'), $final_name);
 
-        return redirect()->back()->with('success'); //redirect back after successfull uploading.
-        // for($i = 500; $i>=0; $i--){
-        //     $final_name = "new_image_" . $i . "." . $request->file('file')->extension();
-        //     continue;
-        // }
+        // return redirect()->back(); //redirect back after successfull uploading.
         // dd($request->all());     
         // echo "Success!!";
+        
+
+        //any uploaded image should go inside the uploads folder in the storage/app path. 
+        //if there is no upload folder in the public path, create one.
+        $final_name = "new_image." . $request->file->extension();
+        $request->file->storeAs('uploads', $final_name);
+
+        return redirect()->back();
     }
 }
