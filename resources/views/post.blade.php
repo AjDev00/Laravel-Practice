@@ -12,8 +12,8 @@
     </style>
 </head>
 <body>
-    <h2 class="text-3xl mb-7 mt-5 font-serif">Post Form</h2>
-    <form action="{{ route('post_store') }}" method="post">
+    <h2 class="text-3xl mb-7 mt-2">Post Form</h2>
+    <form action="{{ route('post_store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-col gap-5">
             <div class="flex flex-col gap-0">
@@ -25,11 +25,12 @@
                             error 
                         @enderror
                     "
+                    value="{{ old('title') }}"
                 >
+                @error('title')
+                    <b style="font-size: 12px;" class="text-red-500">{{ $message }}</b>
+                @enderror
             </div>
-            @error('title')
-                <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
-            @enderror
 
             <div class="flex flex-col gap-0">
                 <label for="">Description: </label>
@@ -37,13 +38,25 @@
                     name="description" 
                     cols="30" 
                     rows="10" 
-                    class="focus:outline-none border border-slate-500 h-32 w-72 rounded-sm" 
+                    class="focus:outline-none border border-slate-500 h-32 w-72 rounded-sm
+                        @error('description') 
+                            error 
+                        @enderror
+                    "
+                    value="{{ old('description') }}"
                 >
                 </textarea>
+                @error('description')
+                    <b style="font-size: 12px;" class="text-red-500">{{ $message }}</b>
+                @enderror
             </div>
-            @error('description')
-                <b style="font-size: 12px;" class="text-red-500 -mt-10">{{ $message }}</b>
-            @enderror
+
+            <div class="flex flex-col gap-0">
+                <input type="file" name="file">               
+                @error('file')
+                    <b style="font-size: 12px;" class="text-red-500">{{ $message }}</b>
+                @enderror
+            </div>
 
             <div>
                 <button type="submit" class="border border-transparent bg-teal-600 text-white p-2 rounded-full px-4 hover:opacity-70 hover:duration-300">
