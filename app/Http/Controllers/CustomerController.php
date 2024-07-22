@@ -12,10 +12,19 @@ class CustomerController extends Controller
         $customer = new Customer();
 
         //insert data into the customer table in the database.
-        $customer->customers_name = "Aptech";
-        $customer->customers_email = "aptech@gmail.com";
-        $customer->customers_phone_number = "1234567890";
+        $customer->customers_name = "Cooper";
+        $customer->customers_email = "cooper@gmail.com";
+        $customer->customers_phone_number = "7949328923";
         $customer->save();
+
+        //update a single customer data in the database table.
+        // $single_customer_data = Customer::find(1);
+        // $single_customer_data->customers_name = "Justweb";
+        // $single_customer_data->update();
+
+        //delete a single customer data in the database table.
+        // $single_customer_data = Customer::find(3);
+        // $single_customer_data->delete();
     }
 
     public function show(){
