@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Middleware\Simple;
@@ -138,6 +139,9 @@ Route::post('contact/store', [ContactFormController::class, 'store'])->name('sto
 Route::get('post', [PostController::class, 'index']);
 Route::post('post/store', [PostController::class, 'store'])->name('post_store');
 Route::get('post/delete', [PostController::class, 'delete'])->name('post_delete');
+
+Route::get('customer', [CustomerController::class, 'index']);
+Route::get('customer-show', [CustomerController::class, 'show']);
 
 
 
