@@ -150,6 +150,7 @@ Route::get('students/create', [StudentController::class, 'create']);
 Route::get('students/show', [StudentController::class, 'index']);
 Route::get('students/update', [StudentController::class, 'update']);
 Route::get('students/delete', [StudentController::class, 'delete']);
+Route::get('students/join', [StudentController::class, 'join']);
 
 
 

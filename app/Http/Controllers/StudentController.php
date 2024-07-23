@@ -70,6 +70,20 @@ class StudentController extends Controller
         //     echo $student->name . "<br>";
         //     echo $student->email . "<br><br><br>";
         // }
+
+        //Using the exists function to print out an error if operation is false.
+        $student_exists = DB::table('students')->where('id',2)->exists();
+        if($student_exists){
+            $data = DB::table('students')->where('id',2)->first();
+
+            // dd($data);
+
+            echo $data->name . "<br>";
+            echo $data->email;
+        }
+        else{
+            echo 'This user does not exists!';
+        }
     }
 
     public function create(){
@@ -103,6 +117,19 @@ class StudentController extends Controller
     }
 
     public function join(){
-        
+
+        //Joining Two Tables Together.
+        $result = DB::table('students')
+        ->join('fees', 'students.id','=','fees.student_id')
+        ->select('fees.*', 'students.name', 'students.email')
+        ->get();
+
+        // dd($result);
+        foreach ($result as $item){
+            echo "Name: " . $item->name . "<br>";
+            echo "Email: " . $item->email . "<br>";
+            echo "Fee Amount: " . $item->fee_amount . "<br>";
+            echo "Amount Paid: " . $item->amount_paid . "<br><br><br>";
+        }
     }
 }
