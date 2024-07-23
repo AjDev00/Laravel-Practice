@@ -151,6 +151,11 @@ Route::get('students/show', [StudentController::class, 'index']);
 Route::get('students/update', [StudentController::class, 'update']);
 Route::get('students/delete', [StudentController::class, 'delete']);
 Route::get('students/join', [StudentController::class, 'join']);
+Route::get('students/aggregate', [StudentController::class, 'aggregateFunc']);
+Route::get('students/does-exists', [StudentController::class, 'doesExists']);
+Route::get('students/single-grouping', [StudentController::class, 'singleGrouping']);
+Route::get('students/multiple-grouping', [StudentController::class, 'multipleGrouping']);
+Route::get('students/having', [StudentController::class, 'having']);
 
 
 
