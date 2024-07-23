@@ -72,18 +72,33 @@ class StudentController extends Controller
         // }
 
         //Using the exists function to print out an error if operation is false.
-        $student_exists = DB::table('students')->where('id',2)->exists();
-        if($student_exists){
-            $data = DB::table('students')->where('id',2)->first();
+        // $student_exists = DB::table('students')->where('id',2)->exists();
+        // if($student_exists){
+        //     $data = DB::table('students')->where('id',2)->first();
 
-            // dd($data);
+        //     // dd($data);
 
-            echo $data->name . "<br>";
-            echo $data->email;
-        }
-        else{
-            echo 'This user does not exists!';
-        }
+        //     echo $data->name . "<br>";
+        //     echo $data->email;
+        // }
+        // else{
+        //     echo 'This user does not exists!';
+        // }
+
+        //Using Aggregate Functions to make calculations from the database.
+        echo DB::table('fees')->count(); //count the amount of data in the database table.
+
+        //sum
+        echo "<br>" . "Sum of Fee Amount: " . DB::table('fees')->sum('fee_amount');
+
+        //average.
+        echo "<br>" . "Average Fee Amount: " . DB::table('fees')->avg('fee_amount');
+
+        //maximum.
+        echo "<br>" . "Maximum Fee Amount: " . DB::table('fees')->max('fee_amount');
+
+        //minimum.
+        echo "<br>" . "Maximum Fee Amount: " . DB::table('fees')->min('fee_amount');
     }
 
     public function create(){
