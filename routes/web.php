@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
 use App\Http\Middleware\Simple;
 use App\Http\Middleware\Test;
 use Illuminate\Support\Facades\Route;
@@ -140,8 +141,15 @@ Route::get('post', [PostController::class, 'index']);
 Route::post('post/store', [PostController::class, 'store'])->name('post_store');
 Route::get('post/delete', [PostController::class, 'delete'])->name('post_delete');
 
+//CUSTOMERS ROUTE.
 Route::get('customer', [CustomerController::class, 'index']);
 Route::get('customer-show', [CustomerController::class, 'show']);
+
+//STUDENTS ROUTE.
+Route::get('students/create', [StudentController::class, 'create']);
+Route::get('students/show', [StudentController::class, 'index']);
+Route::get('students/update', [StudentController::class, 'update']);
+Route::get('students/delete', [StudentController::class, 'delete']);
 
 
 
