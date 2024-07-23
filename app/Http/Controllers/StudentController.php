@@ -97,6 +97,12 @@ class StudentController extends Controller
     }
 
     public function delete(){
+
+        //Delete a student's data from the database.
         DB::table('students')->where('id',7)->delete();
+    }
+
+    public function join(){
+        
     }
 }
