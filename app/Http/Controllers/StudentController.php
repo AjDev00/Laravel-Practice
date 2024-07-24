@@ -212,4 +212,16 @@ class StudentController extends Controller
             echo "Total amount of student that have paid the amount: " . $item->total_count . "<br><br><br>";
         }
     }
+
+    public function subQuery(){
+        $result = DB::table('students')->whereIn('id', function($query){
+            $query->select('student_id')
+            ->from('fees')
+            ->groupBy('student_id');
+        })
+        ->get();
+
+        echo "<pre>";
+        print_r($result);
+    }
 }

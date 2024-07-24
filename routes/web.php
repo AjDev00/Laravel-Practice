@@ -156,6 +156,7 @@ Route::get('students/does-exists', [StudentController::class, 'doesExists']);
 Route::get('students/single-grouping', [StudentController::class, 'singleGrouping']);
 Route::get('students/multiple-grouping', [StudentController::class, 'multipleGrouping']);
 Route::get('students/having', [StudentController::class, 'having']);
+Route::get('students/subquery', [StudentController::class, 'subQuery']);
 
 
 
